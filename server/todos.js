@@ -2,17 +2,17 @@ let todos = [
   {
     id: 1,
     body: 'Выучить javascript',
-    isDone: false,
+    status: false,
   },
   {
     id: 2,
     body: 'Выучить React',
-    isDone: false,
+    status: false,
   },
   {
     id: 3,
     body: 'Выучить GraphQL',
-    isDone: true,
+    status: true,
   },
 ];
 

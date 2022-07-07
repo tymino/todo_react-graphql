@@ -1,11 +1,7 @@
 type Todo {
   id: ID
   body: String
-  isDone: Boolean
-}
-
-input TodoUpdate {
-  isDone: Boolean
+  status: Boolean
 }
 
 type Query {
@@ -13,7 +9,7 @@ type Query {
 }
 
 type Mutation {
-  setTodo(body: String!): [Todo]!
-  updateTodo(id: ID!): [Todo]
-  removeTodo(id: ID!): [Todo]
+  createTodo(body: String!): [Todo]!
+  updateTodo(id: ID!): [Todo]!
+  removeTodo(id: ID!): [Todo]!
 }

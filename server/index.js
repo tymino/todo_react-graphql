@@ -12,9 +12,9 @@ const root = {
   getTodos: () => {
     return todos;
   },
-  setTodo: ({ body }) => {
+  createTodo: ({ body }) => {
     const id = Date.now();
-    const newTodo = { id, body, isDone: false };
+    const newTodo = { id, body, status: false };
 
     todos.push(newTodo);
 
@@ -22,18 +22,10 @@ const root = {
   },
   updateTodo: ({ id }) => {
     const updatedTodos = todos.map((todo) => {
-      if (todo.id === Number(id)) {
-        return {
-          ...todo,
-          isDone: !todo.isDone,
-        };
-      }
-
-      return todo;
+      return todo.id === Number(id) ? { ...todo, status: !todo.status } : todo;
     });
 
     todos = updatedTodos;
-
     return todos;
   },
   removeTodo: ({ id }) => {
